@@ -39,6 +39,7 @@
 --color-logo-bg: var(--color-gray1);
 --color-box: var(--color-white);
 --color-form: var(--color-white);
+--color-round: var(--color-primary);
 
 --color-bg-dark: var(--color-dark);
 --color-bg-100-dark: rgba(255, 255, 255, 0.04);
@@ -136,7 +137,7 @@ header {
   transition: background-color 0.3s ease;
 }
 .btn-round.active {
-  background-color: var(--color-primary);
+  background-color: var(--color-round);
 }
 
 .btn-circle2 {
@@ -154,7 +155,7 @@ header {
 .subscribe-button {
   background-color: #6366F1;
   color: #FFFFFF;
-  padding: 11px 20px;
+  padding: 10.5px 20px;
   border: none;
   font-size: 16px;
   border-radius: 0 8px 8px 0;
@@ -280,6 +281,7 @@ header .container {
   align-items: center;
   padding-top: 1rem;
   padding-bottom: 1rem;
+
 }
 
 @media (min-width: 768px) {
@@ -980,19 +982,14 @@ ul li {
   margin-left: 6rem;
 }
 
-#box-2 {
-  margin-left: 0;
-}
+
 
 #quotes {
   margin-top: -3rem;
   margin-right: 310px;
 }
 
-#stars {
-  margin-right: 280px;
-  margin-top: 1rem;
-}
+
 
 .review-box p {
   color: #565973;
@@ -1006,8 +1003,9 @@ ul li {
 }
 
 #person {
-  margin-top: 2.5rem;
-  margin-right: 7rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+ 
 }
 
 #faq {
@@ -1084,6 +1082,34 @@ h3 {
   font-size: 16px;
   font-weight: 600;
 }
+.faq-arrow {
+  font-size: 1.5rem;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.faq-arrow.active {
+  transform: rotate(180deg);
+  background-color: var(--color-primary) !important;
+  border-radius: 50%;
+}
+.faq-arrow.active .btn-round {
+  background-color: var(--color-primary);
+}
+
+.faq-arrow img {
+  filter: brightness(0); /* Dark chevron for light mode by default */
+}
+
+/* Make chevron white when active in light mode */
+.faq-arrow.active img {
+  filter: brightness(0) invert(1); /* White chevron when active */
+}
+
+/* In dark mode, the chevron is always white */
+.dark .faq-arrow img {
+  filter: brightness(0) invert(1); /* White chevron in dark mode */
+}
+
 
 .faq-answer {
   border-top: 2px solid #F3F6FF;
@@ -1182,16 +1208,7 @@ h3 {
     margin-bottom: 2rem;
     margin-left: 4rem;
   }
-  .faq-arrow {
-    font-size: 1.5rem;
-    transition: transform 0.3s, color 0.3s;
-  }
   
-  .faq-arrow.active {
-    transform: rotate(180deg);
-    color: var(--color-primary);
-  }
- 
 }
 #green {
   color: #22C55E;
@@ -1242,9 +1259,9 @@ h3 {
   .faq-item {
       margin-bottom: 1rem;
     }
+   
     .contact-options {
-      gap: 16px;
-      
+      gap: 16px;   
     }
    
   }
@@ -1336,6 +1353,16 @@ h3 {
   margin-top: 2rem;
   margin-bottom: 1rem;
 }
+.subscribe-form form {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+}
+
+
+
+
 
 .form-input {
   padding: 10px 15px;
@@ -1345,7 +1372,6 @@ h3 {
   outline: none;
   flex-grow: 1;
   min-width: 150px;
-  padding-left: 3rem;
   background-color: #FFFFFF;
 }
 
@@ -1355,6 +1381,26 @@ h3 {
   background-repeat: no-repeat;
   background-position: 10px 50%;
 }
+
+.submit-message {
+ align-items: center;
+ text-align: center;
+  font-size: 20px;
+  font-weight: 400;
+
+  @media(min-width: 768px) {
+    margin-top: 7rem;
+    margin-right: 2rem;
+  }
+
+  @media(min-width: 1400px) {
+    margin-right: 6rem;
+    margin-top: 6rem;
+    font-size: 22px;
+    font-weight: 400;
+  }
+}
+
 
 .subscribe-input::-moz-placeholder {
   color: #9397AD;
@@ -1367,11 +1413,12 @@ h3 {
 #subscribe-button {
   background-color: #6366F1;
   color: #FFFFFF;
-  padding: 11px 20px;
+  padding: 10px 15px;
   border: none;
   font-size: 16px;
   border-radius: 0 8px 8px 0;
   cursor: pointer;
+  height: 52px;
 }
 
 #desktop2 {
@@ -1394,6 +1441,19 @@ h3 {
     align-items: stretch;
     width: 100%;
   }
+  .subscribe-form form {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    margin-right: 1rem;
+
+  }
+  
+  .form-input.email {
+    flex: 1; 
+  }
+  
+
   .subscribe-header {
     margin-bottom: 0;
     gap: 32px;
@@ -1406,16 +1466,12 @@ h3 {
   }
   .subscribe-form {
     justify-content: flex-end;
-    width: 212px;
-    margin-right: 1rem;
+    width: 340px;
   }
   .subscribe-input {
     flex-grow: 1;
-    width: 212px;
   }
-  .subscribe-button {
-    width: 115px;
-  }
+ 
   #mobile2 {
     display: block;
   }
@@ -1425,6 +1481,8 @@ h3 {
     height: 222px;
     margin-bottom: 3rem;
   }
+ 
+  
   .subscribe-header {
     margin-left: 5rem;
   }
@@ -1443,15 +1501,30 @@ h3 {
     font-size: 24px;
     margin-left: 0;
   }
+
+
+  @media (min-width:1400px) {
+.subscribe-form form {
+  display: flex;
+  align-items: center;
+  width: 90%;
+}
+}
+
+
 }
 #contact {
   display: none;
+  background-color: #F3F6FF;
+  padding-bottom: 1rem;
 }
+
+
+
 @media (min-width: 1400px) {
   #contact {
     display: block;
     background-color: #F3F6FF;
-    padding-top: 1rem;
     height: 700px;
   }
   #contact .icon-container {
@@ -1492,7 +1565,7 @@ h3 {
     padding: 2rem;
   }
   #contact .consultation-form {
-    background-color: #FFFFFF;
+    background-color: #FFFFFF !important;
     padding: 40px;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
@@ -1502,7 +1575,8 @@ h3 {
   }
   #contact h2 {
     font-size: 40px;
-    padding: 1rem;
+    padding: 2rem;
+    padding-top: 4rem;
 
  
   }
@@ -1542,24 +1616,32 @@ h3 {
     font-size: 32px;
     margin-top: -1rem;
     margin-left: -1.5rem;
+    padding-top: 1rem;
   }
  
 }
 
 #medic {
   display: none;
-  padding: 140px;
-  padding-top: 60px;
-  gap: 2rem;
+  grid-template-columns: 1fr;
   background-color: #FFFFFF;
+  padding: 2rem;
+}
+
+.map {
+  display: none;
 }
 @media (min-width: 1400px) {
   #medic {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    padding: 140px;
+    padding-top: 60px;
+    gap: 2rem;
   }
-}
+
 #medic .map {
+  display: block;
   margin-top: 10rem;
   margin-bottom: 2rem;
   margin-left: 3rem;
@@ -1590,11 +1672,14 @@ h3 {
 #medic .socials {
   display: flex;
   justify-content: space-around;
-  margin-right: 14rem;
-  margin-left: 2rem;
+  margin-right: 13rem;
+  padding-left: 1.5rem;
+
+
 }
 #medic .socials a:hover {
   background-color: #6366F1;
+}
 }
 
 footer {
@@ -1608,6 +1693,7 @@ footer .container {
   margin-top: -2rem;
   padding: 2rem;
 }
+
 
 .dark {
   color-scheme: dark;
@@ -1699,6 +1785,9 @@ footer .container {
 .dark .btn-download-app .show-dark {
   display: block;
 }
+.dark .btn-download-app:hover {
+  background-color: #6366F1;
+}
 .dark .show-dark {
   display: none;
 }
@@ -1761,6 +1850,18 @@ footer .container {
     background-color: rgba(255, 255, 255, 0.04);
   }
 }
+.dark .reviewer-name {
+  font-weight: 600;
+  margin: 0;
+  color: var(--color-white);
+
+}
+
+.dark .reviewer-role {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5); 
+  margin: 0;
+}
 .dark .contact-card h5{
   color: rgba(255, 255, 255, 0.7);
 }
@@ -1780,7 +1881,7 @@ footer .container {
   background-color: rgba(255, 255, 255, 0.04);
 }
 .dark #contact .consultation-form {
-  background-color: rgba(255, 255, 255, 0.04);
+  background-color: rgba(255, 255, 255, 0.04) !important;
 }
 .dark #contact .consultation-form .form-group input, .dark #contact .consultation-form .form-group select {
   background-color: rgba(255, 255, 255, 0.04);
@@ -1853,19 +1954,108 @@ h1, h2, h3, h4, h5 {
 .dark .show-light {
   display: none;
 }
+.dark .faq-arrow.active {
+  transform: rotate(180deg);
+  background-color: var(--color-primary);
+  border-radius: 50%;
+}
+
 
 .breadcrumb {
-  margin-bottom: -2rem;
-  margin-top: 0;
-  display: flex;
-  gap: 0.5rem;
-  margin-left: 10rem;
-  
+
+    background-color: var(--color-gray1);
+    margin-bottom: -2.08rem;
+    display: flex;
+    gap: 0.5rem;
+    border: none;
+    padding-left: 12rem;
+    padding-top: 2rem; 
+}
+.dark .breadcrumb {
+background-color: var(--color-bg-100-dark);
+}
+#home {
+  color: var(--color-gray6);
 }
 
 .breadcrumb-separator {
   margin-left: 0.5rem;
 }
+
+.rating {
+  display: flex;
+  margin-right: 16.5rem;
+}
+
+.star {
+  font-size: 1.5em; 
+  margin-right: 2px;
+  color: transparent; 
+  -webkit-text-stroke: 1px var(--color-gray5); 
+}
+
+.star.filled {
+  color: var(--color-yellow); 
+  -webkit-text-stroke: 0; 
+}
+
+.reviewer-info {
+  display: flex;
+  align-items: center;
+  margin-top: -3rem;
+  margin-left: 1rem;
+  gap: 0.5rem;
+}
+
+
+
+.reviewer-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.reviewer-name {
+  font-weight: 600;
+  margin: 0;
+  color: var(--color-dark);
+  margin-top: 6rem;
+  margin-bottom: -1rem;
+
+}
+
+.reviewer-role {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-gray6);
+  margin: 0;
+}
+
+.dark .reviewer-name {
+  font-weight: 600;
+  margin: 0;
+  color: var(--color-white);
+  margin-top: 6rem;
+ 
+
+}
+
+.dark .reviewer-role {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-gray6);
+  margin: 0;
+}
+
+.header-contact {
+  background-color: var(--color-gray1);
+}
+.dark .header-contact {
+  background-color: var(--color-bg-100-dark);
+  border-bottom: none;
+  box-shadow: none;
+}
+
+
 
 
 
