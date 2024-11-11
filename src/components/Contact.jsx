@@ -63,8 +63,8 @@ const Contact = () => {
                             </div>
                             <button type="submit" className="submit-btn">Make an appointment</button>
                         </form>
-                    </div>
                 </div>
+            </div>
                 
             </div>
         </section>

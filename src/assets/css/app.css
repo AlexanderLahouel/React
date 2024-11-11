@@ -1097,17 +1097,17 @@ h3 {
 }
 
 .faq-arrow img {
-  filter: brightness(0); /* Dark chevron for light mode by default */
+  filter: brightness(0); 
 }
 
-/* Make chevron white when active in light mode */
+
 .faq-arrow.active img {
-  filter: brightness(0) invert(1); /* White chevron when active */
+  filter: brightness(0) invert(1); 
 }
 
-/* In dark mode, the chevron is always white */
+
 .dark .faq-arrow img {
-  filter: brightness(0) invert(1); /* White chevron in dark mode */
+  filter: brightness(0) invert(1); 
 }
 
 
@@ -1178,6 +1178,7 @@ h3 {
   }
 }
 @media (min-width: 1400px) {
+
   #faq .container {
     grid-template-columns: 1fr 2fr;
     gap: 100px;
@@ -1270,6 +1271,7 @@ h3 {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 24px;
+    margin-top: 3rem;
 
    
    .faq-item {
@@ -1514,9 +1516,60 @@ h3 {
 
 }
 #contact {
-  display: none;
+  display: block;
   background-color: #F3F6FF;
   padding-bottom: 1rem;
+  padding-top: 2rem;
+}
+#contact .consultation-form {
+  background-color: #FFFFFF !important;
+  padding: 40px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+
+ 
+}
+#contact .contact-item {
+  display: flex;
+  gap: 2rem;
+  padding-bottom: 2rem;
+
+}
+#contact .form-group label {
+  font-size: 16px;
+  color: #0B0F19;
+  font-weight: 600;
+}
+#contact .form-group input, #contact .form-group select {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #E2E5F1;
+  font-size: 16px;
+  width: 100%;
+  background-color: #FFFFFF;
+
+}
+#contact .submit-btn {
+  padding: 15px;
+  background-color: #6366F1;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 2.5rem;
+}
+#contact .consultation-form h2 {
+  font-size: 24px;
+  margin-top: -1rem;
+  margin-left: -1.5rem;
+  padding-top: 1rem;
+}
+#contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  
 }
 
 
@@ -1526,6 +1579,7 @@ h3 {
     display: block;
     background-color: #F3F6FF;
     height: 700px;
+    padding-top: 0;
   }
   #contact .icon-container {
     margin-top: -1.5rem;
@@ -1570,8 +1624,10 @@ h3 {
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     height: 717px;
-   margin-top: -7rem;
-   
+    margin-top: -7rem;
+    position: relative; 
+    z-index: 10; 
+    overflow: hidden; 
   }
   #contact h2 {
     font-size: 40px;
@@ -1619,10 +1675,11 @@ h3 {
     padding-top: 1rem;
   }
  
+ 
 }
 
 #medic {
-  display: none;
+  display: block;
   grid-template-columns: 1fr;
   background-color: #FFFFFF;
   padding: 2rem;
@@ -1671,9 +1728,13 @@ h3 {
 }
 #medic .socials {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   margin-right: 13rem;
-  padding-left: 1.5rem;
+  margin-left: -1.5rem;
+
+  @media (min-width:2000px) {
+    margin-right: 30rem;
+  }
 
 
 }
@@ -1878,11 +1939,12 @@ footer .container {
   color: rgba(255, 255, 255, 0.7);
 }
 .dark #contact {
-  background-color: rgba(255, 255, 255, 0.04);
+  background-color: var(--color-bg-100-dark);
 }
 .dark #contact .consultation-form {
-  background-color: rgba(255, 255, 255, 0.04) !important;
+  background-color: var(--color-form-dark) !important;
 }
+
 .dark #contact .consultation-form .form-group input, .dark #contact .consultation-form .form-group select {
   background-color: rgba(255, 255, 255, 0.04);
   border: none;
@@ -1896,7 +1958,7 @@ footer .container {
   border: none;
 }
 .dark #medic {
-  background-color: #0B0F19;
+  background-color:var(--color-dark);
 }
 .dark #medic p strong {
   color: #FFFFFF;
@@ -1968,8 +2030,14 @@ h1, h2, h3, h4, h5 {
     display: flex;
     gap: 0.5rem;
     border: none;
-    padding-left: 12rem;
+    padding-left: 11rem;
     padding-top: 2rem; 
+    @media(max-width:768px) {
+      padding-left: 1rem;
+    }
+    @media (min-width:2000px) {
+      padding-left: 29rem;
+    }
 }
 .dark .breadcrumb {
 background-color: var(--color-bg-100-dark);
