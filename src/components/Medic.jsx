@@ -35,8 +35,9 @@ const Medic = () => {
                 <a className="icon" href="#"><img src={Tw} alt="Twitter logo"/></a>
                 <a className="icon" href="#"><img src={Ig} alt="Instagram logo"/></a>
                 <a className="icon" href="#"><img src={Ytb} alt="Youtube logo"/></a>
-        </div>
     </div>
+        </div>
+
 </section>
 
   )
